@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "MacOS Java 설치 / JDK & Eclipse"
+title: "MacOS Java 설치 / JDK & Eclipse"
 ---
 
 ## 아래의 블로그를 참고하여 설치하여 설치하였다.
