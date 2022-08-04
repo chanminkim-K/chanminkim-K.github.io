@@ -37,7 +37,7 @@ title: nextInt()와 nextLine() 차이
     }
     ```
     > **실행결과**
-    > > <img width="166" alt="스크린샷 2022-08-04 오후 11 30 55" src="https://user-images.githubusercontent.com/103116205/182873142-33398812-34b7-4d23-9cca-fa80281d68e2.png">
+    > > <img width="400" alt="스크린샷 2022-08-04 오후 11 30 55" src="https://user-images.githubusercontent.com/103116205/182873142-33398812-34b7-4d23-9cca-fa80281d68e2.png">
 
 ## - 해결방법
 1. 이전 포스팅에서 언급했듯이 **모든 값을 nextLine()** 으로 입력받아서 **타입을 변환**해준다.
@@ -61,4 +61,4 @@ title: nextInt()와 nextLine() 차이
     }
     ```
     > **실행결과**
-    > > <img width="178" alt="스크린샷 2022-08-04 오후 11 33 20" src="https://user-images.githubusercontent.com/103116205/182873593-c7289ffc-cbc6-4fed-b740-8318e84f8ce3.png">
+    > > <img width="400" alt="스크린샷 2022-08-04 오후 11 33 20" src="https://user-images.githubusercontent.com/103116205/182873593-c7289ffc-cbc6-4fed-b740-8318e84f8ce3.png">
