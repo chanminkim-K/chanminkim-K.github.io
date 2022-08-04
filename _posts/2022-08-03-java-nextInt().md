@@ -17,20 +17,54 @@ title: nextInt()와 nextLine() 차이
 - 문자 또는 문장 라인 전체를 입력받으며, **개행문자까지 다 가져온다.** 
 
 ## - nextInt()의 잘못된 코드
-- 공백 전까지의 숫자만 입력받으므로, 공백 이후의 숫자는 버퍼에 남아있게되어 다음 값을 입력받지않고 바로 22가 출력이 된다.
+- nextint()메서드가 개행문자를 제거하지 않으므로, **버퍼에 개행문자가 남게된다.** 그래서 nextLine()메서드가 개행문자를 받게되어 사용자가 원하는 문자열을 입력할 수 없다.
+- 그러므로 nextInt()메서드는 **연속적으로 다른 타입의 값**을 입력받아서 사용하기에 까다롭다. 
     ```java
     import java.util.*; // Scanner클래스를 사용하기 위해 추가
 
     public class ScannerEx {
 	    public static void main(String[] args) {
 		   Scanner scanner = new Scanner(System.in); // Scanner클래스의 객체를 생성
-		   System.out.print("첫번째 정수를 하나 입력해주세요.>");
-       int first = scanner.nextInt();
-       System.out.print("\n두번째 정수를 하나 입력해주세요.>");
-       int second = scanner.nextInt();
-       System.out.printf("\nfirst = %d\n", first);	
-		   System.out.printf("second = %s\n", second);	
+		   System.out.print("나이를 입력해주세요.>");
+		   int age = scanner.nextInt();  
+       
+		   System.out.print("성함을 입력해주세요.>");
+		   String name = scanner.nextLine();
+       
+		   System.out.printf("\nage = %d\n", age);	
+		   System.out.printf("name = %s\n", name);	
 	    }
     }
     ```
-    <img src="/Documents/result1.png" width="40%" height="30%"></img>
+    > **실행결과**
+    > > 나이를 입력해주세요.>25  
+        성함을 입력해주세요.>  
+        age = 25  
+        name =   
+
+## 해결방법
+1. 이전 포스팅에서 언급했듯이 **모든 값을 nextLine()** 으로 입력받아서 **타입을 변환**해준다.
+2. **버퍼에 남아있는 개행문자를 제거**하기 위해 nextint() 다음에 **scanner.nextLine()을 한 줄 추가**해준다.
+    ```java
+    import java.util.*; // Scanner클래스를 사용하기 위해 추가
+
+    public class ScannerEx {
+	    public static void main(String[] args) {
+		   Scanner scanner = new Scanner(System.in); // Scanner클래스의 객체를 생성
+		   System.out.print("나이를 입력해주세요.>");
+		   int age = scanner.nextInt();
+		   scanner.nextLine(); // 개행문자 제거
+		   
+		   System.out.print("성함을 입력해주세요.>");
+		   String name = scanner.nextLine();
+       
+		   System.out.printf("\nage = %d\n", age);	
+		   System.out.printf("name = %s\n", name);	
+  	    }
+    }
+    ```
+    > **실행결과**
+    > > 나이를 입력해주세요.>25  
+        성함을 입력해주세요.>홍길동         
+        age = 25  
+        name = 홍길동
