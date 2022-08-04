@@ -42,7 +42,7 @@ title: nextInt()와 nextLine() 차이
         age = 25  
         name =   
 
-## 해결방법
+## - 해결방법
 1. 이전 포스팅에서 언급했듯이 **모든 값을 nextLine()** 으로 입력받아서 **타입을 변환**해준다.
 2. **버퍼에 남아있는 개행문자를 제거**하기 위해 nextint() 다음에 **scanner.nextLine()을 한 줄 추가**해준다.
     ```java
